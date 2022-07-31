@@ -1,0 +1,13 @@
+The hash command can be used to view recently run programs, their location in the file system, and the number of times they were run.
+Specifically, the hash command displays or modifies the remembered location of the program associated with a given command and how many times the command was run.
+It stores this information in a hash table and provides options to display, reset, or delete the table’s content.
+A program’s location information consists of its full path name in the file system.
+
+Syntax: hash [-lr] [-p pathName] [-dt] [commandName ...]
+
+Some command options are as follows. 
+-d: Deletes the location for commandName from the hash table 
+-l: Displays output in a format that can be used as input to another command
+-p: Sets pathName as the the full path location for commandName
+-r: Empties the hash table
+-t: Displays the location of commandName
