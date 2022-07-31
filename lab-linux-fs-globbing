@@ -1,0 +1,186 @@
+1. Change the present working directory to your personal directory
+2. Create a new directory called tutorial
+3. Change the present working directory to the tutorial directory
+4. Create two new directories called labs and exercises
+5. Remove all access permissions of others from the exercises directory
+6. Set groups to have read and execute permissions on the exercises
+directory
+7. Change the present working directory to $HOME/tutorial/labs
+8. Create multiple empty files (and list them) using wildcards. Note
+the syntax {1..5} in the first command below. It is taken by the
+Linux shell as a series of sequential integers from 1 to 5.
+9. Remove multiple files using wildcards. Note the syntax *. It is
+taken as “any characters” by the Linux shell.
+10. Create a test directory and enter it, single line statement.
+• Create the following files :
+file1 file10 file11 file2 File2 file3
+File3 file33 fileAB filea fileA fileAAA file( file 2
+1. List (with ls) all files starting with file
+2. List (with ls) all files starting with File
+3. List (with ls) all files starting with file and ending in a
+number.
+4. List (with ls) all files starting with file and ending with a
+letter
+5. List (with ls) all files starting with File and having a
+digit as fifth character.
+6. List (with ls) all files starting with File and having a
+digit as fifth character and nothing else.
+7. List (with ls) all files starting with a letter and ending in
+a number.
+8. List (with ls) all files that have exactly five characters.
+9. List (with ls) all files that start with f or F and end with
+3 or A.
+10. List (with ls) all files that start with f have i or R
+as second character and end in a number.
+11. List all files that do not start with the letter F.
+12. You receive information that one of your servers was
+cracked, the cracker probably replaced the ls command. You
+know that the echo command is safe to use. Can echo replace ls
+? How can you list the files in the current directory with
+echo ?
+13. Save the list of all shell environment variables to a
+file name var.txt
+14. Use the grep command to search for PATH variable
+15. Change the Prompt to show the current folder (bash
+prompt show)
+16. Run the command
+mkdir ~/dir1/dir2
+How can the error be fixed?
+17. Running
+ls ~/
+doesn't show any files beginning with a dot. Why not? How can
+you see them?
+18. What command lists the files in the current directory
+that begin with upper case letters?
+19. In the directory whose full name is "/bin", list the
+files that end in "sh".
+What command did you use?
+20. Search where is the location command more.
+What command did you use?
+21. What does running cd - do?
+22. Create a directory and some file(s) in the directory. Try
+deleting the directory using rmdir. What happens? How can you
+delete it?
+
+
+
+
+1. Change the present working directory to your personal directory
+$ cd $HOME
+2. Create a new directory called tutorial
+$ mkdir tutorial
+3. Change the present working directory to the tutorial directory
+$ cd tutorial
+4. Create two new directories called labs and exercises
+$ mkdir labs
+$ mkdir exercises
+5. Remove all access permissions of others from the exercises directory
+$ chmod o-rwx exercises
+6. Set groups to have read and execute permissions on the exercises
+directory
+$ chmod g=rx exercises
+7. Change the present working directory to $HOME/tutorial/labs
+$ cd $HOME/tutorial/labs
+8. Create multiple empty files (and list them) using wildcards. Note
+the syntax {1..5} in the first command below. It is taken by the
+Linux shell as a series of sequential integers from 1 to 5.
+$ touch subject_{1..5}.dat
+$ ls -l subject_*
+9. Remove multiple files using wildcards. Note the syntax *. It is
+taken as “any characters” by the Linux shell.
+$ rm subject_*.dat
+10. mkdir testdir; cd testdir
+• Create the following files :
+touch file{1..3}
+touch file1{0..1}
+touch File{2..3}
+touch file33 fileAB filea fileA fileAAA
+touch "file("
+touch "file 2"
+1. List (with ls) all files starting with file
+ls file*
+2. List (with ls) all files starting with File
+ls File*
+3. List (with ls) all files starting with file and ending in a
+number.
+ls file*[0-9]
+4. List (with ls) all files starting with file and ending with a
+letter
+ls file*[a-z]
+5. List (with ls) all files starting with File and having a
+digit as fifth character.
+ls File[0-9]*
+6. List (with ls) all files starting with File and having a
+digit as fifth character and nothing else.
+ls File[0-9]
+7. List (with ls) all files starting with a letter and ending in
+a number.
+ls [a-z]*[0-9]
+8. List (with ls) all files that have exactly five characters.
+ls ?????
+9. List (with ls) all files that start with f or F and end with
+3 or A.
+ls [fF]*[3A]
+10. List (with ls) all files that start with f have i or R
+as second character and end in a number.
+ls f[iR]*[0-9]
+11. List all files that do not start with the letter F.
+ls [!F]*
+12. You receive information that one of your servers was
+cracked, the cracker probably replaced the ls command. You
+know that the echo command is safe to use. Can echo replace ls
+? How can you list the files in the current directory with
+echo ?
+echo *
+13. Save the list of all shell environment variables to a
+file name var.txt
+printenv > env.txt
+cat env.txt
+14. Use the grep command to search for PATH variable
+printenv | grep PATH
+15. Change the Prompt to show the current folder
+export PS1="\u@\h[\!](\v)> "
+\w : the current working directory, with $HOME abbreviated
+with a tilde
+\W : the basename of the current working directory, with $HOME
+abbreviated with a tilde
+For more :
+https://www.cyberciti.biz/tips/howto-linux-unix-bash-shellsetup-prompt.html
+16. Run the command
+mkdir ~/dir1/dir2
+How can the error be fixed?
+Answer: The problem is that mkdir, by default, only creates
+one directory level and assumes that all preceding
+subdirectories exist. One can create the required
+subdirectories first:
+mkdir ~/dir1
+mkdir ~/dir1/dir2
+OR
+mkdir -p ~/dir1/dir2
+17. Running
+ls ~/
+doesn't show any files beginning with a dot. Why not? How can
+you see them?
+Answer: Files beginning with a dot are treated as hidden by
+default. They're often used as configuration files. To view
+all files:
+ls –a
+18. What command lists the files in the current directory
+that begin with upper case letters?
+ls - d [A-Z]*
+19. In the directory whose full name is "/bin", list the
+files that end in "sh".
+What command did you use?
+ls /bin/*sh
+20. Search where is the location command more.
+What command did you use?
+which more
+21. What does running cd - do?
+Answer: cd - changes to the previous directory and prints out
+the name of the that directory.
+22. Create a directory and some file(s) in the directory. Try
+deleting the directory using rmdir. What happens? How can you
+delete it?
+Answer: rmdir only removes a directory if it's completely empty. rm has an
+option to delete a directory recursively
+
