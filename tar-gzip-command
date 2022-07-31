@@ -1,0 +1,46 @@
+----------------
+The tar command:
+----------------
+
+Bundles a collection of files into a single archive file for easier copying or downloading
+Created bundle is called a tarball
+Contents of an archive file can optionally be compressed
+The command is also used to unbundle an archive file
+
+For example:
+– To bundle and compress file1, file2, and file3 into a file called tarball.tar:
+tar -cvf tarball.tar file1 file2 file3
+– To unbundle or extract files from the tarball:
+tar -xf tarball.tar
+
+The tar command is used for the following:
+File downloads
+Large numbers of files to copy or move
+Internet downloads, including software
+
+-x Extracts the contents of a tarball
+-z Compresses the contents of a tarball by using the gzip utility
+-f Specifies the name of the tarball
+-v Produces verbose output by showing file names while the tarball is processed 
+
+Some tar options are mandatory when extracting.
+-x: Extracts a tarball (an archive file)
+-z: Uses gzip (see later in this lesson)
+-f: Provides the name of the tarball
+-v: Shows the progress as the tarball is created
+
+-----------------
+The gzip command:
+-----------------
+
+Use the gzip command to compress or decompress files, including tarballs:
+Common with internet downloads
+Common with archiving log files
+Common with archiving old data
+
+Files can be both tarred and gzipped, and files that are created with the gzip command will have the .gz extension.
+
+Compresses or decompresses files, including tarballs
+Examples:
+– To compress a tarball: gzip salesdata.tar
+– To decompress a tarball: gzip -d salesdata.tar.gz
