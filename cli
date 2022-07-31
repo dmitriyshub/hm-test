@@ -10,7 +10,9 @@ find / -name "*" -print 2> / dev/null
 # find the users shell, count and sort them in uppercase
 cut -d ":" -f 7 /etc/passwd |tr [:lower:] [:upper:] | uniq -c | sort -nr
 
+---------------------
 # ls command options:
+---------------------
 
 -l #Long format (shows permissions)
 -h #File sizes reported in a human-friendly
@@ -20,4 +22,74 @@ cut -d ":" -f 7 /etc/passwd |tr [:lower:] [:upper:] | uniq -c | sort -nr
 --sort=size or -S #Sorts by file size
 --sort=time or -t #Sorts by modification time
 --sort=version or -v #Sorts by version number
- 
+
+
+-----------------------
+# more command options:
+-----------------------
+more [-options] [-num] [+/pattern] [+linenum] [file_name]
+
+Options: 
+-d: Displays information about how to navigate at the bottom of the screen
+-f: Prevents line wrap 
+-p: Clears the screen before displaying the content 
+-s: Squeezes multiple blank lines into one line
+
+num: Number of lines to display 
+/pattern: String to find in the file 
+linenum: Line number where to start displaying the content
+file_name: Name of the file to display the content of 
+
+-----------------------
+# less command options:
+-----------------------
+
+less [OPTIONS] filename
+
+Options: 
+-N: Shows line numbers 
+-X: Displays the content after the last command and does not clear screen when exiting
++F: Watches for file content changes
+
+---------------------
+# rm command options:
+---------------------
+
+rm [OPTIONS] filename(s)
+
+Options:
+-d: Removes a directory; the directory must be empty: rm –d dir 
+-r: Allows you to remove a non-empty directory: rm –r dir 
+-f: Never prompt user (useful when deleting a directory with many files) 
+-i: Prompts the user for confirmation for each file 
+-v: Display the names of deleted files
+
+If you want to remove a complete directory, use the –r and –f option: rm –rf dir
+You can use a regular expression: rm *.png removes all files that end with .png.
+
+------------------------
+# mkdir command options:
+------------------------
+
+mkdir [OPTIONS] filename(s)
+
+Options: 
+-m <mask>: Sets a permission to the directory 
+-p: Creates parent directory
+mkdir –m 700 dir1: Creates the dir1 directory with the mask 700 for permissions
+mkdir –p /home/user/dir1/dir2: If dir1 does not exist, the creation will fail without the –p option
+
+---------------------
+# mv command options:
+---------------------
+
+mv [OPTIONS] source destination
+Options:
+-i: Prompts before overwritting a file
+-f: Avoid being prompted
+-n: Do not overwrite existing files
+-v: Verbose option (prints the name of files that are moved or renamed)
+
+mv *.png dir1: Moves all files with extension .png into dir1
+
+
