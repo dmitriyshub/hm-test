@@ -1,0 +1,3 @@
+Comment -c : useradd -c "new employee" jdoe 
+Account expiration -e : useradd -e 2025-01-01 jdoe 
+Home directory path -d : useradd -d /users/jdoe jdoe
