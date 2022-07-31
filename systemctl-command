@@ -1,0 +1,21 @@
+Managing services with the systemctl command:
+
+• The following is the syntax of the systemctl command: systemctl <subcommand> <service name>
+• The following are common troubleshooting tasks if services aren't working correctly: • Restart after any configuration change. • Restart when troubleshooting.
+• The systemctl command has many subcommands, including status, start, stop, restart, enable, and disable.
+• Services provide functionality such as networking, remote administration, and security. 
+
+After installing httpd (yum install httpd),
+the sudo systemctl status httpd command shows you that the service is not started or activated (to start the system at boot time).
+The sudo systemctl start httpd command starts the service.
+The sudo systemctl enable httpd command activates the service so that it is available after restarting the machine.
+
+Using the systemctl command, perform the following actions:
+1. Show the running services.
+2. List all services whether the service is active, exited, or failed.
+3. List all active services.
+
+Full commands for each item: 
+1. systemctl 
+2. systemctl list-units --type=service 
+3. systemctl list-units --type=service --state=active
