@@ -92,4 +92,16 @@ Options:
 
 mv *.png dir1: Moves all files with extension .png into dir1
 
+-----------------------
+# diff command options:
+-----------------------
+
+diff [options] File1 File2
+
+Compares files line by line and displays the differences
+Valuable for comparing two files 
+Output is called a diff 
+
+
+
 
