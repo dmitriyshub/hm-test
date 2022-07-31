@@ -1,0 +1,16 @@
+The grep command:
+Searches the contents of a file for a particular text pattern or string and displays each occurrence
+Can also search files in a directory
+Provides options to control the search behavior and output
+Syntax: grep <text pattern or string> <where to search>
+
+-i Ignore case
+-r Recursive searches
+-l List only file names
+-n Display line number
+-c Count of matching lines
+
+--files-with-matches Names of files that contain selected lines are written to standard output
+
+The grep command searches a file or a directory for a particular text pattern or string and displays each occurrence.
+You can control the search behavior and output through various options
