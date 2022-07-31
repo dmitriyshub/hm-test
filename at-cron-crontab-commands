@@ -1,0 +1,70 @@
+The at commands:
+
+$ at [options]
+When a command is run:
+• This command runs a task once at a specified time:
+o This command is used for one-time tasks: for example, running a backup script at 4 PM today only.
+o To display a scheduled job, use the at –l option.
+o To delete a scheduled job, use the atrm [number] command.
+
+The cron commands:
+
+$ cron [option]
+When a command is run:
+• This command runs a task on a regular basis at a specified time:
+o This command is used for repetitive tasks: for example, running backup scripts on a weekly basis at 4 PM.
+o This command maintains the list of tasks to run in a crontab file.
+
+What are the at and cron commands?
+• The at command is useful when having to run a task only once at a specified time.
+• The cron daemon is useful when running tasks on a regular basis at a specified time.
+
+Why would you use the at and cron commands? 
+• You can schedule tasks with the at and cron commands. Administrators can
+configure services or scripts to run automatically at specified times without having to be manually submitted.
+
+There are also cron directories, which are pre-created and pre-scheduled directories that administrators can use to store scripts that will run at specified times:
+• /etc/cron.daily • /etc/cron.hourly • /etc/cron.monthly • /etc/cron.weekly
+
+The crontab command:
+$ crontab -a fileName 
+
+Creates the crontab file that holds the commands and steps that the cron daemon will run
+Can also be used to list, modify, or delete the crontab file
+• The crontab file format has six fields, which stand for the following:
+• MIN: Minutes – any value from 0 to 59
+• HOUR: Hour – any value from 0 to 23 
+• DOM: Day of month – any value from 1-31 
+• MON: Month – any value from 1-12
+• DOW: Day of week - any value from 0-6
+• CMD: Command – any command or path
+
+What is crontab?
+crontab stands for cron table, is made up of a list of commands, and is also used to manage this table. The following fields make up the table:
+• Minute • Hour • Day of the month • Month of the year • Day of the week • Command
+
+• crontab specifies commands or scripts to be run at a specific time, which the user can modify.
+• The cron daemon can check the file each minute for scheduled tasks, and cron will run these tasks.
+• These commands and steps are stored in the crontab file that holds the commands and steps that the cron daemon will run.
+Why would you use it? 
+• This command is useful for regularly scheduled backups, clean-up scripts, scripts to rotate log files, or reminder messages.
+
+Editing and listing the crontab file:
+
+$ crontab -e 
+This command edits the crontab file as the root user:
+• Before entering –e, copy the original crontab text to a new file that you can revert to if needed.
+
+$ crontab -l
+To see a list, use crontab –l
+
+
+Edit the crontab file as the root user by using the crontab -e command. This automatically installs the new crontab file, putting all changes into place.
+It uses the system's designated default text editor (usually Vim).
+Best practices:
+• Use crontab – l to list files.
+• Before you enter -e, copy the original crontab text to a new file that you can revert to if needed.
+There is a system crontab and user crontab:
+• System-wide scheduled tasks are managed by root at /etc/crontab. 
+• Each user manages user-specific tasks at /var/spool/cron/crontabs/$USERNAME.
+• You should always be editing with crontab –e.
