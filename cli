@@ -1,0 +1,2 @@
+#discard any errors that the find command generates to keep CLI tidy.
+find / -name "*" -print 2> / dev/null
