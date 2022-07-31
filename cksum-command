@@ -1,0 +1,12 @@
+The cksum command
+
+This command generates a checksum value for a file or stream of data.
+It is used to see whether the file was corrupted during transfer.
+The cksum command displays a cyclic redundancy check (CRC) value and the byte count for a file.
+If the file’s CRC value is the same before and after a transfer, the file was not corrupted.
+Syntax: cksum [FileName]
+
+The cksum command generates a checksum value for a file or stream of data that the user can use to see whether the file was corrupted during transfer.
+Specifically, it computes and displays a cyclic redundancy check (CRC) value for the file and shows its size in bytes.
+The CRC value is derived from the contents of the file and is used to validate the file’s integrity.
+If a file’s checksum value is the same before and after a transfer, the file was not corrupted.
