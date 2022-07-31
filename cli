@@ -1,2 +1,23 @@
+ #tells cat to take input information from myfirstscript.
+ cat 0<myfirstscript
+
+#the output of ls command is directed to the file folder.txt.
+ls –l 1>folder.txt
+
 #discard any errors that the find command generates to keep CLI tidy.
 find / -name "*" -print 2> / dev/null
+
+# find the users shell, count and sort them in uppercase
+cut -d ":" -f 7 /etc/passwd |tr [:lower:] [:upper:] | uniq -c | sort -nr
+
+# ls command options:
+
+-l #Long format (shows permissions)
+-h #File sizes reported in a human-friendly
+-a #format Shows all files  , including hidden files 
+-R #Lists subdirectories
+--sort=extension or -X #Sorts alphabetically by file extension
+--sort=size or -S #Sorts by file size
+--sort=time or -t #Sorts by modification time
+--sort=version or -v #Sorts by version number
+ 
