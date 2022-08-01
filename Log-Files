@@ -1,0 +1,47 @@
+Log File               Description 
+
+/var/log/syslog        Stores system information
+/var/log/secure        Stores authentication information for Red Hat-derived distributions
+/var/log/kern          Stores Linux kernel information 
+/var/log/boot.log      Stores startup messages 
+/var/log/maillog       Stores mail messages
+/var/log/daemon.log    Stores information about running background services
+/var/log/auth.log      Stores authentication information for Debian-derived distributions
+/var/log/cron.log      Stores cron messages for scheduled tasks
+/var/log/httpd         Stores Apache information for Red Hat-derived distributions
+
+
+
+Other important log files include the following: 
+• /var/log/YUM: Stores YUM installer information for Red Hat-derived distributions 
+• /var/log/apache2/access.log: Stores Apache authentication information for Debian-derived distributions
+• /var/log/lastlog: Stores information about successful logins to the host
+
+
+The lastlog command
+Reports recent login information for the system Can report all logins or login information for a specific user
+
+The lastlog command retrieves user information from the /var/log/lastlog file and outputs it in the console.
+lastlog –u ec2-user displays information of the ec2-user only.
+lastlog –t 1 displays login information more recent than 1 day ago.
+Use man lastlog for more options.
+
+
+Log rotation
+• Servers typically run large applications. o Servers often log every request. 
+o This logging leads to bulky log files.
+• Log rotation can help with the following in regard to bulky logs:
+o It is a way to limit the total size of the logs that are retained.
+o It still helps analysis of recent events.
+• Log rotation is an automated process that is used in system administration where dated log files are archived.
+
+Log rotation is not activated by default.
+With the logrotate utility, you can compress, rename, or clean up the log files.
+You can activate log rotation according to the log file size: if the log file is more than a specific size, it will be renamed xxxxx.log-20210612
+(if it is renamed on June 21, 2021).
+The default date format is yyyymmdd.
+It can also be activated on a regular basis (weekly, daily or monthly).
+A maximum number of log files to keep can be set: if the maximum number of logs is reached, the logs are erased, moved, or emailed.
+You can also compress log files.
+You can individually tailor log rotation for different kinds of logs.
+
