@@ -1,0 +1,18 @@
+lscpu - List CPU information
+lshw -  List hardware
+du - Check file and directory sizes
+df - Display disk size and free space
+fdisk - List and modify partitions on the hard drive
+vmstat - Indicate use of virtual memory
+free - Indicate use of physical memory
+top - Display system’s processes and resource usage
+uptime - Indicate the amount of time that the system has been up, number of users, and central processing unit (CPU) wait time
+
+
+• df is the disk free command that you use to check the available space on a hard drive.
+• You use the du command to display the amount of space that a file or directory uses.
+
+
+ 
+  
+
