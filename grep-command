@@ -14,3 +14,19 @@ Syntax: grep <text pattern or string> <where to search>
 
 The grep command searches a file or a directory for a particular text pattern or string and displays each occurrence.
 You can control the search behavior and output through various options
+
+
+
+The following are examples:
+• cat yourlog.log | grep ERROR 
+• tail -f yourlog.log | grep error 
+• sudo cat /tmp/log/secure | grep LOGIN > SharedFolders/logins.csv
+
+The following are some more details on these errors.
+•cat yourlog.log | grep ERROR: searches for the ERROR message in the yourlog.log file and displays the matching lines of the file in the console 
+(reads the content of the yourlog.log file and redirects it to the grep command that searches for the word ERROR).
+
+•tail -f yourlog.log | grep error: searches the word error in the last 10 lines of the yourlog.log file and displays the matching lines of the file in the console 
+(reads the last 10 lines of the yourlog.log file and redirects it to the grep command that searches for the word error;remember that without any additional option, tail reads the last 10 lines of a file).
+
+•sudo cat /var/log/secure | grep LOGIN > SharedFolders/logins.csv: searches the word LOGIN in the file /var/log/secure and writes the matching lines of the file in the file SharedFolders/logins.csv. Sudo is required to access the /var/log/secure file.
