@@ -1,0 +1,26 @@
+File retrieval utilities
+
+wget and curl are commonly used utilities for retrieving files from other servers.
+
+wget:
+• Can do a recursive download
+• Supports HTTP, HTTPS, and FTP protocols
+• Performs retries over an unreliable connection 
+
+curl
+• Downloads a single resource only 
+• Supports HTTP, HTTPS, FTP, and many other additional protocols (for example: FTPS and FILE)
+• Runs on more platforms than wget
+
+Two popular utilities—wget and curl—are commonly used to download files to a server.
+Both support the HTTP, HTTPS, and File Transfer Protocol (FTP) protocols and provide additional capabilities of their own.
+Note the following:
+
+• With wget, you can download a single resource or multiple resources recursively that reside under a given Uniform Resource Locator (URL).
+It also automatically tries to resume a download if the network connection is broken.
+
+• curl can download only a single resource at a time, but it supports more protocols and runs on more platforms than wget.
+For example, curl supports the FILE protocol, which you can use to retrieve a file from the local file system.
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+The -o option specifies the file name that the downloaded package is written to (in this case, awscliv2.zip).
