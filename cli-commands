@@ -10,6 +10,14 @@ find / -name "*" -print 2> / dev/null
 # find the users shell, count and sort them in uppercase
 cut -d ":" -f 7 /etc/passwd |tr [:lower:] [:upper:] | uniq -c | sort -nr
 
+# create directories recursively
+mkdir -p WorldCup2022/{Asia/{Qatar,Japan,Morocco},Europe/{Wales,Poland,Croatia}}
+
+# 
+curl -s https://www.gutenberg.org/files/730/730-0.txt | tr [:upper:] [:lower:] | tr -cs [:alnum:] '\n' | sort | uniq -c | sort -nr | head
+
+tr -c '[:alnum:]' '[\n*]' < 730-0.txt | fgrep -v -w -f file | sort | uniq -c | sort -nr | head  -10
+
 ---------------------
 # ls command options:
 ---------------------
