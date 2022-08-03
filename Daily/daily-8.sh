@@ -17,7 +17,7 @@
 # 1 exercise
 : '
 read -ep $'Input a number:\n' num
-if [ $num -eq 1]; then
+if [ $num -eq 1 ]; then
 echo "Correct number"
 fi
 '
@@ -32,6 +32,7 @@ else
 echo "no"
 fi
 '
+
 # 3 exercise
 : '
 filename=$1
@@ -72,7 +73,7 @@ fi
 '
 
 # 6 exercise
-: '
+
 echo "Please select your favorite color! "
 
 select color in blue red yellow green exit_loop
@@ -82,18 +83,24 @@ case $color in
 blue)
 echo "Blue is a primary color"
 ;;
+
 red)
 echo "Red is a primary color"
 ;;
+
 yellow)
 echo "Yellow is a primary color"
 ;;
+
 green)
 echo "Green is a secondary color"
 ;;
+
 exit_loop)
+echo "Bye!"
 break
 ;;
+
 *)
 echo "This color is not available"
 
@@ -101,7 +108,8 @@ echo "This color is not available"
 esac
 
 done
-'
+
+
 # 7 exercise
 
 : '
