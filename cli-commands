@@ -13,6 +13,8 @@ cut -d ":" -f 7 /etc/passwd |tr [:lower:] [:upper:] | uniq -c | sort -nr
 # create directories recursively
 mkdir -p WorldCup2022/{Asia/{Qatar,Japan,Morocco},Europe/{Wales,Poland,Croatia}}
 
+#find ./WorldCup2022/TeamG/ -type d -exec cp ./WorldCup2022/TeamF/Canada/Toronto {} \;
+
 # 
 curl -s https://www.gutenberg.org/files/730/730-0.txt | tr [:upper:] [:lower:] | tr -cs [:alnum:] '\n' | sort | uniq -c | sort -nr | head
 
