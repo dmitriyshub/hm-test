@@ -1,0 +1,50 @@
+Command  Description
+echo - Displays information on the console
+read - Reads a user input
+subStr - Gets the substring of a string
++ - Adds two numbers or combine strings
+file - Opens a file
+mkdir - Creates a directory
+cp - Copies files
+mv - Moves or renames files
+chmod - Sets permissions on files
+rm - Deletes files, folders, etc.
+ls - Lists directories
+
+Integer comparison operators
+Comparison operators compare two variables or quantities.
+• -eq is equal to: if [ "$a" -eq "$b“ ]
+• -ne is not equal to: if [ "$a" -ne "$b" ]
+• -gt is greater than: if [ "$a" -gt "$b" ]
+• -ge is greater than or equal to: if [ "$a" -ge "$b" ]
+• -lt is less than: if [ "$a" -lt "$b" ]
+• -le is less than or equal to: if [ "$a" -le "$b" ]
+• < is less than (within double parentheses): (("$a" < "$b"))
+• <= is less than or equal to (within double parentheses): (("$a" <= "$b"))
+• > is greater than (within double parentheses): (("$a" > "$b"))
+• >= is greater than or equal to (within double parentheses): (("$a" >= "$b"))
+
+In these examples, you can see that brackets or double parentheses surround the condition.
+• (( are for numerical comparison:
+• (( $a < $b )) is equivalent to [ $a –lt $b ]
+• You will also see some conditions using double brackets:
+• if [[$a –lt $b ]]
+• This is basically a notation equivalent to a simple bracket with enhanced features, but this goes beyond this course.
+• Note also that “ are not mandatory: if [ "$a" -lt "$b" ] is equivalent to if [ $a -lt $b ]
+
+String comparison operations
+• = or == is equal to
+o if [ "$a" = "$b" ]
+o if [ "$a" == "$b" ]
+• != is not equal to
+o if [ "$a" != "$b" ]
+o This operator uses pattern matching within a [[ ... ]] construct.
+• < is less than, in ASCII alphabetical order
+o if [[ "$a" < "$b" ]]
+o if [ "$a" \< "$b" ]
+o Note that the < must be escaped in a [ ] construct
+• > is greater than, in ASCII alphabetical order
+o if [[ "$a" > "$b" ]] o if [ "$a" \> "$b" ]
+o Note that the > must be escaped in a [ ] construct.
+• -z string is null (that is, it has zero length)
+• -n string is not null
