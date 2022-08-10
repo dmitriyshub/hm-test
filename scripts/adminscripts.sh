@@ -84,3 +84,31 @@ function check_leap_year () {
 
 check_leap_year 2600
 
+
+: "
+mounth_days(){
+local year=$1
+local mounth=$2
+
+case $mounth in
+ 1 | 3 | 5 | 7 | 8 | 10 | 12)
+ echo 31
+ return 31;;
+ 4 | 6 | 9 | 11)
+ echo 30
+ return 30;;
+ 2)
+ if is_leap $year
+ then
+ echo 29
+ return 29
+ else
+ echo 28
+ return 28
+ fi  ;;
+ *)
+ echo mounth not correct
+ exit 1 ;;
+esac
+}
+"
