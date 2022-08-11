@@ -100,22 +100,23 @@ function modulo() {                       #Should not accept 0 as the second arg
 
 
 function is_prime() {            #This function takes the result from the calculation and returns whether it is a prime number or not
-local res=$1
-local echo_once=1                 #Prints once even if the loop goes on
-for (( i=2; i<=$res/2+1; i++ ))
-do
-  ans=$(( res%i ))
-  if [[ $ans -eq 0 ]] || [[ $res -eq 0 ]]   #0 was unaccounted for
-  then
-    echo "$res is not a prime number."
-    let echo_once+=1
-    break
-  elif [[ $echo_once -eq 1 ]]
-  then
-    echo "$res is a prime number."
-    let echo_once+=1
-  fi
-done
+    local res=$1
+    local i=2
+    local flag=0
+    while test $i -le `expr $res / 2`
+    do
+        if test `expr $res % $i` -eq 0
+    then
+    flag=1
+    fi
+    i=`expr $i + 1`
+    done
+    if test $flag -eq 1
+    then
+        echo "The number is Not Prime"
+    else
+        echo "The number is Prime"
+    fi
 }
 
 function is_div_by_5() { #Checks whether the calculated result is divisible by 5 without a remainder
