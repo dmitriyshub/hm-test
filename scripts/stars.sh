@@ -1,29 +1,29 @@
 #!/bin/bash
-#
-#size=5
-#param=5
-#i=1
-#j=1
-#
-#while [[ $i -le $size ]]; do
-#    j=1
-#    while [[ $j -le $size ]]; do
-#
-#      if [[ $j -lt $param ]]; then
-#        echo -n " "
-#      else
-#        echo -n "*"
-#      fi
-#
-#      let j=$j+1
-#
-#  done
-#
-#  let i=$i+1
-#  param=$param-1
-#  echo
-#done
+: '
+size=5
+param=5
+i=1
+j=1
 
+while [[ $i -le $size ]]; do
+    j=1
+    while [[ $j -le $size ]]; do
+
+      if [[ $j -lt $param ]]; then
+        echo -n " "
+      else
+        echo -n "*"
+      fi
+
+      let j=$j+1
+
+  done
+
+  let i=$i+1
+  param=$param-1
+  echo
+done
+'
 
 #size=10
 #i=1
@@ -126,7 +126,7 @@
 #  let counter=$counter+1
 #done
 
-
+: '
 width=10
 height=5
 let space=$width/2
@@ -147,4 +147,45 @@ while [[ $row -le $height ]]; do
   echo
   space=$space-1
   row=$row+1
+done
+'
+#width=5
+#height=5
+#col=1
+#row=1
+#star=1
+#while [[ $row -le $height  ]]; do
+#    col=1
+#
+#    while [[ $col -le $width  ]]; do
+#    echo -n "*"
+#
+#    col=$col+1
+#    done
+#
+#    echo
+#
+#    width=$width-1
+#    row=$row+1
+#done
+
+#!/bin/bash
+space=5
+i=1
+j=1
+while [[ $i -le $space ]]
+do
+while [[ $j -le $i ]]
+do
+if [[ $i -eq $space || $j == 1 || $j == $i ]]
+then
+echo -n "*"
+else
+echo -n " "
+fi
+let j=$j+1
+done
+echo
+j=1
+let i=$i+1
 done
