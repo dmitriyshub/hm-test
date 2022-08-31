@@ -26,30 +26,35 @@ def validate_choice(choice):
     else:
         return True
 
+
 def check_win(play):
-    if play > 5:
-        if ((spot[1] == spot[2] == spot[3]) or (spot[4] == spot[5] == spot[6]) or (spot[7] == spot[8] == spot[9]) \
-        or (spot[1] == spot[4] == spot[7]) or (spot[2] == spot[5] == spot[8]) or (spot[3] == spot[6] == spot[9]) \
-        or (spot[1] == spot[5] == spot[9]) or (spot[3] == spot[5] == spot[7])) == ('X' or 'O'):  # across the top
+    if play > 5 :
+        if (spot[1] == spot[2] == spot[3]) or (spot[4] == spot[5] == spot[6]) or (spot[7] == spot[8] == spot[9]) :
             print(" *** !won! *** ")
             return True
-        elif play == 9:
+        elif (spot[1] == spot[4] == spot[7]) or (spot[2] == spot[5] == spot[8]) or (spot[3] == spot[6] == spot[9]):
+            print(" *** !won! *** ")
+            return True
+        elif (spot[1] == spot[5] == spot[9]) or (spot[3] == spot[5] == spot[7]):  # across the top
+            print(" *** !won! *** ")
+            return True
+
+        elif play == 10:
             print("DRAW")
             exit()
-
+        else:
+            return False
 
 
 ######MAIN#######
 print('Enjoy! press "exit" to stop!')
 
-play = 0
-while play <= 9:
+play = 1
+while play <= 10:
     main_board(spot)
 
     if check_win(play):
         break
-
-
 
     # Player Input
     choice = int(input("Select your choice: "))
