@@ -8,23 +8,32 @@ from ipaddress import *
 
 # ip="241.1.1.112"
 # aa=re.match(r"^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$",ip)
+#
+# ip = [input("IP address: ")]
+#
+# for i in ip:
+#     validip = re.match(r"^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$", i)
+#     if validip:
+#         print(validip.group())
+#     else:
+#         print("Not valid")
 
-ip = [input("IP address: ")]
 
-for i in ip:
-    validip = re.match(r"^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$", i)
-    if validip:
-        print(validip.group())
-    else:
-        print("Not valid")
+def check_ip():
+    while True:
+
+        user_ip = input("What is your IP address? ")
 
 
-def check_ip(ip):
-    for i in ip:
-        validip = re.match(r"^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$",i)
+
+        validip = re.match(r"^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$",user_ip)
 
         if validip:
-            print(validip.group())
+            print("Good IP address")
+            break
+        else:
+            user_answer = print("Not a valid IP please try again! ")
+check_ip()
 
 # def subnet_calc():
 #
