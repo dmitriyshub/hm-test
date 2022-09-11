@@ -102,7 +102,6 @@ do
 
 done
 '
-: '
 size=9
 let mid=size/2
 col=0
@@ -124,7 +123,5 @@ do
 echo
 let col=$col+1
 done
-'
-
 
 

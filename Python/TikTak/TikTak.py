@@ -1,4 +1,6 @@
 spot = {1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7', 8: '8', 9: '9'}
+spot_1 = {1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7', 8: '8', 9: '9'}
+spot_3 = {1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7', 8: '8', 9: '9'}
 
 
 def main_board(spot):
@@ -14,7 +16,7 @@ def turn_check(turn):
 
 
 def check_exist():
-    if str(choice) != spot[choice]:
+    if str(choice) != spot[choice] :
         print("This option already taken")
         return True
 
@@ -67,3 +69,5 @@ while play <= 10:
     # if choice == 'exit':
     #     print("Thx for Playing")
     #     play = False
+
+
