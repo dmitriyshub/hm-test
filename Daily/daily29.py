@@ -1,4 +1,29 @@
 '''
+  854  rm entry-hello
+  855  em yellow
+  856  rm yellow
+  857  rm -rf yalagit/
+  858  ls
+  859  clear
+  860  pwd
+  861  mkdir -p big/{fashion/{jade,honigman,babyboom},baby/{shilav,mybaby}}
+  862  mv big/fashion/jade/ big/fashion/casro ; mv big/fashion/babyboom/ big/baby/
+  863  touch big/fashion/casro/babybpmkids
+  864  cp big/fashion/casro/babybpmkids big/baby/mybaby/
+  865  rm -rf big/
+  866  sudo apt update -y
+  867  sudo apt search ftp-server
+  868  sudo apt install vsftpd
+  869  sudo cp /etc/vsftpd.conf  /etc/vsftpd.conf_default
+  870  sudo systemctl start vsftpd
+  871  sudo systemctl enable vsftpd
+  872  sudo ufw allow 20/tcp
+  873  sudo ufw allow 21/tcp
+  874  history | tail -30
+
+'''
+
+'''
 Create a list of words from the given text. Then standardize this text
 (change uppercase letters to lowercase, remove punctuation marks).
 Extract words longer than six characters and print the result to the
