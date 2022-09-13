@@ -104,13 +104,11 @@ printed, will be returned by the function.
 3. Write a script that output the following pattern (with loops).
 '''
 def endless(**args):
-    count = 0
     for k,v in args.items():
-        print(f"the key is {k} and the value is {v}")
-        count+=1
+        print(f"the key and value is {k}:{v}")
     return k,v
 
-#print(endless(a=1,b=2,c=3,d=4,e=5,f=6))
+print(endless(a=1,b=2,c=3,d=4,e=5,f=6))
 
 def posend(*args):
     for i in args:
