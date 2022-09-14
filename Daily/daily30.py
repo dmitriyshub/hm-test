@@ -73,5 +73,6 @@ display_info(company='Amazon',price=128)
 MySQL:
 Display from the “payments” table, the average of “amount” in 2004.
 Pay attention, the result has to include up to two decimal places.
+answer:
 SELECT round(avg(amount),2) FROM payments WHERE year(paymentDate) = 2004;
 '''
