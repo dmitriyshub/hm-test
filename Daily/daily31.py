@@ -42,38 +42,46 @@ Identity(size)
 AWS:
 1. Under the shared responsibility model, which of the following is
 the responsibility of AWS?
+
 Client-side encryption
 Server-Side encryption
-Configuring infrastructure devices
+Configuring infrastructure devices << YES
 Filtering traffic with Security Groups
+
 2. What should you do in order to keep the data on EBS volumes safe?
 (Choose TWO)
-Ensure that EBS data is encrypted at rest
+
+Ensure that EBS data is encrypted at rest << YES
 Regularly update firmware on EBS devices
 Store a backup daily in an external drive
-Create EBS snapshots
+Create EBS snapshots << YES
 Prevent any unauthorized access to AWS data centers
+
 3. A company has developed a media transcoding application in AWS.
+
 The application is designed to recover quickly from hardware
 failures. Which one of the following types of instance would be
 the most cost-effective choice to use?
 Reserved instances
-Spot Instances
+Spot Instances << YES
 Dedicated instances
 On-Demand instances
+
 4. What is the most cost-effective purchasing option for running a
 set of EC2 instances that must always be available for a period
 of two months?
 Spot Instances
 Reserved Instances - All Upfront
-On-Demand Instances
+On-Demand Instances << YES
 Reserved Instances - No Upfront
+
 5. A company has developed a media transcoding application in AWS.
 The application is designed to recover quickly from hardware
 failures. Which one of the following types of instance would be
 the most cost-effective choice to use?
+
 Reserved instances
-Spot Instances
+Spot Instances << YES
 Dedicated instances
 On-Demand instances
 ======================================================================
