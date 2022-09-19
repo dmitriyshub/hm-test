@@ -46,15 +46,13 @@ y_true = [0, 0, 1, 1, 0, 1, 0]
 y_pred = [0, 0, 1, 0, 0, 1, 0]
 
 def accuract(y_true,y_pred):
-    count = 0.0
-    correct = 0.0
+    count = 0
+    correct = 0
     for i in range(len(y_true)):
         count += 1
         if y_true[i] == y_pred[i]:
             correct += 1
     acc = correct / count
-    #acc = "{:.4f}".format(acc)
-
     return round(acc,4)
 
 print(accuract(y_true,y_pred))
