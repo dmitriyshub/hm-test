@@ -28,6 +28,11 @@ def Identity(size):
 
 
 print(Identity(2))
+
+'''
+SELECT sum(amount) as total, status FROM orders INNER JOIN payments USING (customerNumber) GROUP BY status;
+'''
+
 '''
 ======================================================================
 AWS:

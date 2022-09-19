@@ -59,7 +59,11 @@ def jpath(file):
 a = jpath('file.json')
 print(a)
 
-
+'''
+SELECT orderNumber, amount
+FROM orders INNER JOIN payments
+USING (customerNumber)
+'''
 '''
 AWS:
 1. What should you do in order to keep the data on EBS volumes safe?
