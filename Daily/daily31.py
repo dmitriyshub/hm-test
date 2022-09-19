@@ -22,21 +22,12 @@
 
 # Function to print identity matrix
 def Identity(size):
-
-    for row in range(0, size):
-        for col in range(0, size):
-
-            # Here end is used to stay in same line
-            if (row == col):
-
-            else:
-                print("0 ", end=" ")
-        print()
+    Identity_list = [[ 1 if j == n else 0 for n in range(size)]for j in range (size)]
+    return Identity_list
 
 
-# Driver Code
-size = 2
-Identity(size)
+
+print(Identity(2))
 '''
 ======================================================================
 AWS:
