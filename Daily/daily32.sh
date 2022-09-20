@@ -9,13 +9,14 @@ function_name () {
   num2=""
   num3=""
 
-  while [[ ! $num1 =~ ^[0-9]+$ ]] || [[ ! $num2 =~ ^[0-9]+$ ]] || [[ ! $num3 =~ ^[0-9]+$ ]]; do
+  while [[ ! $num1 =~ $re ]] || [[ ! $num2 =~ $re ]] || [[ ! $num3 =~ $re ]]; do
       read -p "Give me three numbers: " num1 num2 num3
-      att=$att+1
-      if [[ $att -eq 2 ]]; then
+
+      if [[ $att -ge 2 ]]; then
           echo "Bye"
           exit
       fi
+      att=$att+1
   done
   for n in $num1 $num2 $num3 ; do
     ((n > max)) && max=$n
