@@ -53,3 +53,11 @@ aws ec2 describe-instances --instance-ids $INSTANCE
 aws ec2 describe-instances --instance-ids $INSTANCE --query 'Reservations[].Instances[].State.Name' --output text
 #retrieve a URL to the instance
 aws ec2 describe-instances --instance-ids $INSTANCE --query Reservations[].Instances[].PublicDnsName --output text
+
+aws ec2 describe-instances --instance-ids i-031412e6471b2faa3 --query 'Reservations[].Instances[].PrivateIpAddress' --output text
+aws ec2 describe-instances --instance-ids i-031412e6471b2faa3 --query 'Reservations[].Instances[].State.Name' --output text
+aws ec2 describe-instances --instance-ids i-031412e6471b2faa3 --query Reservations[].Instances[].PublicDnsName --output text
+
+aws ec2 describe-instances --instance-ids i-031412e6471b2faa3 --query 'Reservations[].Instances[].SecurityGroup' --output text
+aws ec2 describe-instances --instance-ids i-031412e6471b2faa3 --query 'Reservations[].Instances[].GroupName' --output text
+aws ec2 authorize-security-group-ingress --group-id sg-0ad408338ece02a0a --protocol tcp --port 22 --cidr 0.0.0.0/0
