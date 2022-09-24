@@ -1,51 +1,4 @@
 #!/bin/bash
-yum -y update
-amazon-linux-extras install -y lamp-mariadb10.2-php7.2 php7.2
-yum -y install httpd mariadb-server
-
-systemctl enable httpd
-systemctl start httpd
-
-systemctl enable mariadb
-systemctl start mariadb
-
-echo '<html><h1>Hello From Your Web Server!</h1></html>' > /var/www/html/index.html
-find /var/www -type d -exec chmod 2775 {} \;
-find /var/www -type f -exec chmod 0664 {} \;
-echo "<?php phpinfo(); ?>" > /var/www/html/phpinfo.php
-
-usermod -a -G apache ec2-user
-chown -R ec2-user:apache /var/www
-chmod 2775 /var/www
-
-#Check /var/log/cloud-init-output.log after this runs to see errors, if any.
-
-#
-# Download and unzip the Cafe application files.
-#
-
-# Database scripts
-wget https://aws-tc-largeobjects.s3.amazonaws.com/CUR-TF-100-RESTRT-1/173-activity-JAWS-troubleshoot-instance/db-v2.tar.gz
-tar -zxvf db-v2.tar.gz
-
-# Web application files
-wget https://aws-tc-largeobjects.s3.amazonaws.com/CUR-TF-100-RESTRT-1/173-activity-JAWS-troubleshoot-instance/cafe-v2.tar.gz
-tar -zxvf cafe-v2.tar.gz -C /var/www/html/
-
-#
-# Run the scripts to set the database root password, and create and populate the application database.
-# Check the following logs to make sure there are no errors:
-#
-#       /db/set-root-password.log
-#       /db/create-db.log
-#
-cd db
-./set-root-password.sh
-./create-db.sh
-hostnamectl set-hostname web-server
-[ec2-user@cli-host starters]$ clear
-[ec2-user@cli-host starters]$ cat create-lamp-instance-v2.sh
-#!/bin/bash
 DATE=`date '+%Y-%m-%d %H:%M:%S'`
 echo
 echo "Running create-instance.sh on "$DATE
@@ -97,11 +50,12 @@ echo "Key: "$key
 # Get AMI ID
 imageId=$(aws ec2 describe-images \
 --owners amazon --query 'Images[*].[ImageId]' \
---filters 'Name=name,Values=amzn2-ami-hvm-2.0.20190115-x86_64-gp2' 'Name=state,Values=available' \
+--filters 'Name=name,Values=amzn2-ami-hvm-2.0.20220912.1-x86_64-gp2' 'Name=state,Values=available' \
 --output json \
 --profile $profile \
 --region $region | grep ami- | cut -d '"' -f2 | sed -n 1p)
 echo "AMI ID: "$imageId
+
 
 #check for existing cafe instance
 existingEc2Instance=$(aws ec2 describe-instances \
@@ -195,7 +149,7 @@ echo "Opening port 80 in the new security group"
 aws ec2 authorize-security-group-ingress \
 --group-id $securityGroup \
 --protocol tcp \
---port 8080 \
+--port 80 \
 --cidr 0.0.0.0/0 \
 --region $region \
 --profile $profile
@@ -206,7 +160,7 @@ instanceDetails=$(aws ec2 run-instances \
 --image-id $imageId \
 --count 1 \
 --instance-type $instanceType \
---region us-west-1 \
+--region us-west-2 \
 --subnet-id $subnetId \
 --security-group-ids $securityGroup \
 --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=cafeserver}]' \

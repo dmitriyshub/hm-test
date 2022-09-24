@@ -61,3 +61,7 @@ aws ec2 describe-instances --instance-ids i-031412e6471b2faa3 --query Reservatio
 aws ec2 describe-instances --instance-ids i-031412e6471b2faa3 --query 'Reservations[].Instances[].SecurityGroup' --output text
 aws ec2 describe-instances --instance-ids i-031412e6471b2faa3 --query 'Reservations[].Instances[].GroupName' --output text
 aws ec2 authorize-security-group-ingress --group-id sg-0ad408338ece02a0a --protocol tcp --port 22 --cidr 0.0.0.0/0
+
+#check userdata script log
+sudo tail -f /var/log/cloud-init-output.log
+
