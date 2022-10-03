@@ -11,6 +11,18 @@ list_n = [4, 5, 2, 9, 5, 2, 8, 2, 8, 10]
 
 print(top_n(list_n,3))
 #print(top_n(list_n,3))
+
+'''
+SELECT sum(amount) as total , productName
+FROM `orders` 
+INNER JOIN orderdetails USING (`orderNumber`) 
+INNER JOIN products USING (`productCode`)
+INNER JOIN customers USING (customerNumber)
+INNER JOIN payments USING (customerNumber)
+WHERE `status`="shipped" 
+GROUP BY `productName` ORDER BY total;
+'''
+
 """
 ======================================================================
 AWS:
