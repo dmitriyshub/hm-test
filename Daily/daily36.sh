@@ -20,20 +20,25 @@
 # 1230  cat iPid | tail -5
 # 1231  cat iPid | head -5
 
-(crontab -l; echo "* * * * * $0")| awk '!x[$0]++'| crontab -
-
+#code a bash function which receives a PID.
+#the function will check periodically (in a method of your choice - at,
+#chron, sleep Etc. ... ) whether the process is up.
+#if the proc is down - a new file named "WARNING - pid -number: [PID]
+#is DOWN" will be created in the user home dir
 
 pidfunc(){
   #finda=$(ps aux | awk '{print $2}' | grep ^$pidid$)
   sudo kill -s 0 $1
-
   if [ $? -eq 0 ]; then
-    exit 0
+    return 0
   else
     touch ~/WARNING-pid-number:\ $1\ is\ down
-    exit 1
+    return 1
   fi
 
 }
+
+
+(crontab -l; echo "* * * * * $0")| awk '!x[$0]++'| crontab -
 pidfunc $1
 #sudo /bin/bash -c 'echo "* * * * * root /home/baeldung/job.sh" >> /etc/crontab'
