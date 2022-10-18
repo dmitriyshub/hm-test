@@ -21,6 +21,11 @@
 # -s start: If present, starts instead of stops instances.
 # PREREQUISITES
 # This app assumes that you have defined an .aws/credentials file.
+# stop
+# ./stopinator.php -t"Project=ERPSystem;Environment=development"
+# start
+#./stopinator.php -t"Project=ERPSystem;Environment=development" -s
+
 
 require 'vendor/autoload.php';
 use Aws\Ec2\Ec2Client;

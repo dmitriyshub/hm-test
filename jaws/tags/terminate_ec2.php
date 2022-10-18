@@ -1,6 +1,8 @@
 #!/usr/bin/php
 
 <?php
+# ./terminate-instances.php -region <region> -subnetid <subnet-id>
+
 require 'vendor/autoload.php';
 use Aws\Ec2\Ec2Client;
 
