@@ -1,20 +1,20 @@
 #!/bin/bash
 # 1216  clear
 # 1217  pwd
-# 1218  mkdir -p cloud/{services/{cloudtrail},region/{availability_zone,local_zone}}
+# 1218  mkdir -p cloud/{services/{cloud_trail},region/{availability_zone,local_zone}}
 # 1219  tree cloud/
 # 1220  rm -rf cloud/
-# 1221  mkdir -p cloud/{services/cloudtrail,region/{availability_zone,local_zone}}
+# 1221  mkdir -p cloud/{services/cloud_trail,region/{availability_zone,local_zone}}
 # 1222  tree cloud/
 # 1223  cd cloud/region/local_zone/
-# 1224  mkdir ../../services/cloudwatch
+# 1224  mkdir ../../services/cloud_watch
 # 1225  mkdir /home/dimash/cloud/region/wavelengthzone
 # 1226  echo "The Difference between CloudWatch and CloudTrail: CloudWatch
 #focuses on the activity of AWS services and resources, reporting
 #on their health and performance. On the other hand, CloudTrail is
 #a log of all actions that have taken place inside your AWS
-#environment" > ~/cloud/services/cloudtrail/trailvswatch
-# 1227  cp ~/cloud/services/cloudtrail/trailvswatch ~/cloud/services/cloudwatch/trailvswatch
+#environment" > ~/cloud/services/cloud_trail/trailvswatch
+# 1227  cp ~/cloud/services/cloud_trail/trailvswatch ~/cloud/services/cloud_watch/trailvswatch
 # 1228  echo ~
 # 1229  ps aux | awk '{print $1,$2}' > iPid
 # 1230  cat iPid | tail -5
