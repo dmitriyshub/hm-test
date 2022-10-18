@@ -35,7 +35,8 @@ Resources:
     Type: AWS::EC2::Instance
     Properties:
       InstanceType: 't3.micro'
-      SecurityGroups: [ !Ref 'AppSecurityGroup' ]
+      SecurityGroupIds:
+        - !Ref AppSecurityGroup
       ImageId: !Ref AmazonLinuxAMIID
       SubnetId: !Ref PublicSubnet
       Tags:
