@@ -13,3 +13,18 @@ print(above_120)
 def tr(lst):
     out = [[lst[j][i] for j in range(len(lst))] for i in range(len(lst[0]))]
     return out
+
+
+def transpose(array):
+    width = len(array[0])
+    result = []
+
+    for i in range(width):
+        pair = []
+        for item in array:
+            pair.append(item[i])
+        result.append(pair)
+    print(result)
+
+
+transpose([[1, 2, 3], [4, 5, 6]])
