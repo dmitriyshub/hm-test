@@ -24,7 +24,27 @@ def transpose(array):
         for item in array:
             pair.append(item[i])
         result.append(pair)
-    print(result)
+    return result
 
 
 transpose([[1, 2, 3], [4, 5, 6]])
+
+#Implement a function “mastercounter” that counts the words in a sentence.
+
+Sentence = "Hello is hello, no matter what will be happen, everytime you see me shake my hand and say hello Hello hEllo"
+def master(sentence):
+    a = sentence.replace(',', '').lower().split()
+    # counts = dict()
+    # lower = sentence.lower()
+    # lower = lower.replace(',', '')
+    # sentences = lower.split()
+
+    for word in a:
+        if word in counts:
+            counts[word] += 1
+        else:
+            counts[word] = 1
+
+    return counts
+
+print(master(Sentence))
