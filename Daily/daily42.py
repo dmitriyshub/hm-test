@@ -9,6 +9,12 @@ a = json.dumps(stocks, indent=4, sort_keys=True)
 print(a)
 
 '''
+SELECT od.orderLineNumber , AVG(quantityOrdered)
+FROM orderdetails od
+WHERE 80 < od.priceEach < 100
+group by od.orderLineNumber;
+'''
+'''
 
 ======================================================================
 AWS:
